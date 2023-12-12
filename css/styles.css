@@ -283,6 +283,24 @@ transform: translateY(0);
 .loading p{
 font-size: 24px;
 }
+
+.free{
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 260px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding: 100px 50px;
+  width: 520px;
+  background-color: #F6F8FD;
+}
+.free P{
+  margin: 0;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
 .paying{
   position: absolute;
   top: -50px;

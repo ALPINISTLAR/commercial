@@ -100,8 +100,44 @@ closeButtons.forEach(function (closeButton) {
   });
 });
 
+function simulatePayment() {
+  // Find the elements
+  const buyButton = document.querySelector('.btn--buy');
+  const loadingElement = document.querySelector('.loading');
+  const payingElement = document.querySelector('.paying');
+  const lowBalanceElement = document.querySelector('.low-balance');
+  const freeElement = document.querySelector('.free');
 
+  // Add a click event listener to the buy button
+  buyButton.addEventListener('click', function () {
+    // Check if 'cost-total' is less than or equal to 0
+    const costTotal = parseInt(document.getElementById('cost-total').textContent, 10);
+    if (costTotal <= 0) {
+      // Display an alert indicating the cart is empty
+      freeElement.style.display = 'flex';
+      return; // Stop further execution
+    }
 
-function ret() {
-  document.getElementById('paid').textContent = document.getElementById('cost-total').textContent;
+    // Check if 'cost-total' is less than 'general-balance'
+    const generalBalance = parseInt(document.getElementById('general-balance').textContent, 10);
+
+    if (costTotal > generalBalance) {
+      // If 'cost-total' is greater than 'general-balance', add 'display: flex' to 'low-balance'
+      lowBalanceElement.style.display = 'flex';
+    } else {
+      // Add 'display: flex' to the loading element
+      loadingElement.style.display = 'flex';
+
+      // After 3 seconds, remove 'display: flex' from the loading element
+      setTimeout(function () {
+        loadingElement.style.display = 'none';
+
+        // Add 'display: flex' to the paying element
+        payingElement.style.display = 'flex';
+
+        // Update 'paid' element with the value of 'cost-total'
+        document.getElementById('paid').textContent = document.getElementById('cost-total').textContent;
+      }, 3000);
+    }
+  });
 }
