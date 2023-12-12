@@ -1,21 +1,56 @@
 // SHOPPING CART ACTIONS: Product quantity button;
 const elProductQuantityIncreaseButtons = document.querySelectorAll('.increase-button');
 const elProductQuantityDecreaseButtons = document.querySelectorAll('.decrease-button');
+const elCostElements = document.querySelectorAll('.products__card span#cost');
+const elProductQuantityElements = document.querySelectorAll('.product-info__quantity');
+const elCostTotalElement = document.getElementById('cost-total');
+const elCancelButton = document.getElementById('cancel');
 
-elProductQuantityIncreaseButtons.forEach(function (button) {
+// Initialize total cost to 0
+elCostTotalElement.textContent = '0';
+
+elProductQuantityIncreaseButtons.forEach(function (button, index) {
   button.addEventListener('click', function () {
     const productQuantityElement = button.parentElement.querySelector('.product-info__quantity');
-    productQuantityElement.textContent = parseInt(productQuantityElement.textContent, 10) + 1;
+    const quantity = parseInt(productQuantityElement.textContent, 10) + 1;
+    productQuantityElement.textContent = quantity;
+
+    // Get the cost of the product
+    const cost = parseInt(elCostElements[index].textContent, 10);
+
+    // Update the total cost
+    updateTotalCost(cost);
   });
 });
 
-elProductQuantityDecreaseButtons.forEach(function (button) {
+elProductQuantityDecreaseButtons.forEach(function (button, index) {
   button.addEventListener('click', function () {
     const productQuantityElement = button.parentElement.querySelector('.product-info__quantity');
     const quantity = parseInt(productQuantityElement.textContent, 10);
 
     if (quantity > 0) {
       productQuantityElement.textContent = quantity - 1;
+
+      // Get the cost of the product
+      const cost = parseInt(elCostElements[index].textContent, 10);
+
+      // Update the total cost
+      updateTotalCost(-cost);
     }
   });
 });
+
+elCancelButton.addEventListener('click', function () {
+  // Reset the total cost to 0
+  elCostTotalElement.textContent = '0';
+
+  // Reset the quantity of each product to 0
+  elProductQuantityElements.forEach(function (quantityElement) {
+    quantityElement.textContent = '0';
+  });
+});
+
+function updateTotalCost(amount) {
+  const currentTotal = parseInt(elCostTotalElement.textContent, 10) || 0; // Ensure it's a number
+  elCostTotalElement.textContent = currentTotal + amount + ` so'm`;
+}

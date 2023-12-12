@@ -141,10 +141,47 @@ flex-grow: 1;
   line-height: 20px;
   color: var(--text-color-dark);
 }
-
-.total__cost{
+.total{
+  display: flex;
+  align-items: center;
+}
+.total__cost-label{
   margin: 0;
-  width: 500px;
-  height: 100px;
+  font-size: 40px;
+  margin-right: 4px;
+}
+.total__cost{
+  padding: 24px;
+  font-size: 32px;
+  margin: 0;
+  width: 300px;
+  text-align: center;
   background-color: #fff;
+  margin-right: 100px;
+}
+
+
+.total__buttons {
+  display: flex;
+  gap: 30px;
+}
+.total__btn {
+  width: 160px;
+display: block;
+font-weight: 600;
+text-transform: capitalize;
+text-decoration: none;
+text-align: center;
+cursor: pointer;
+border: 2px solid transparent;
+color: #fff;
+padding: 10px 16px;
+border-radius: 5px;
+background-color: #FF7E1B;
+transition: 0.4s ease;
+}
+.total__btn:hover{
+  background-color: transparent;
+  border-color: #FF7E1B;
+  color: #FF7E1B;
 }
