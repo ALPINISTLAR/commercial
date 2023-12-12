@@ -85,6 +85,7 @@ elSelectButtons.forEach(function (elSelectButton) {
     // Update the 'general-balance' element with the value of the closest 'balance' element
     const closestBalance = elSelectButton.closest('.credit-card').querySelector('.balance');
     const generalBalance = document.getElementById('general-balance');
-    generalBalance.textContent = closestBalance.textContent + ` so'm`;
+    let balanceClosest = closestBalance.textContent + ` so'm`;
+    generalBalance.textContent = balanceClosest;
   });
 });
