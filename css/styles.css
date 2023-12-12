@@ -78,7 +78,7 @@ select:-webkit-autofill:focus {
   flex-grow: 1;
 }
 #top{
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 .products {
   display: flex;
@@ -204,7 +204,9 @@ select:-webkit-autofill:focus {
   border-color: #FF7E1B;
   color: #FF7E1B;
 }
-
+.total__btn:active{
+  transform: translateY(5px)
+}
 .pay{
   padding-bottom: 100px;
 }
@@ -236,6 +238,9 @@ select:-webkit-autofill:focus {
 .credit-card--selected .total__btn:hover{
   background-color: #FF7E1B;
   color: #fff;
+}
+.credit-card--selected .total__btn:active{
+transform: translateY(0);
 }
 .credit-card__type{
   width: 180px;

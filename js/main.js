@@ -5,6 +5,7 @@ const elCostElements = document.querySelectorAll('.products__card span#cost');
 const elProductQuantityElements = document.querySelectorAll('.product-info__quantity');
 const elCostTotalElements = document.querySelectorAll('#cost-total');
 const elCancelButton = document.getElementById('cancel');
+const elSelectButtons = document.querySelectorAll('.select');
 
 // Initialize total cost to 0
 elCostTotalElements.forEach(function (element) {
@@ -60,3 +61,30 @@ function updateTotalCost(amount) {
     element.textContent = (currentTotal + amount) + ' so\'m';
   });
 }
+
+
+
+elSelectButtons.forEach(function (elSelectButton) {
+  elSelectButton.addEventListener('click', function () {
+    // Remove 'credit-card--selected' class from all 'credit-card' elements
+    document.querySelectorAll('.credit-card').forEach(function (creditCardElement) {
+      creditCardElement.classList.remove('credit-card--selected');
+    });
+
+    // Add 'credit-card--selected' class to the parent element of the clicked button
+    elSelectButton.parentElement.classList.add('credit-card--selected');
+
+    // Reset textContent for all buttons to "kartani tanlash"
+    elSelectButtons.forEach(function (button) {
+      button.textContent = 'kartani tanlash';
+    });
+
+    // Set textContent to "tanlandi!" only for the clicked button
+    elSelectButton.textContent = 'tanlandi!';
+
+    // Update the 'general-balance' element with the value of the closest 'balance' element
+    const closestBalance = elSelectButton.closest('.credit-card').querySelector('.balance');
+    const generalBalance = document.getElementById('general-balance');
+    generalBalance.textContent = closestBalance.textContent + ` so'm`;
+  });
+});
