@@ -3,11 +3,13 @@ const elProductQuantityIncreaseButtons = document.querySelectorAll('.increase-bu
 const elProductQuantityDecreaseButtons = document.querySelectorAll('.decrease-button');
 const elCostElements = document.querySelectorAll('.products__card span#cost');
 const elProductQuantityElements = document.querySelectorAll('.product-info__quantity');
-const elCostTotalElement = document.getElementById('cost-total');
+const elCostTotalElements = document.querySelectorAll('#cost-total');
 const elCancelButton = document.getElementById('cancel');
 
 // Initialize total cost to 0
-elCostTotalElement.textContent = '0';
+elCostTotalElements.forEach(function (element) {
+  element.textContent = '0';
+});
 
 elProductQuantityIncreaseButtons.forEach(function (button, index) {
   button.addEventListener('click', function () {
@@ -41,8 +43,10 @@ elProductQuantityDecreaseButtons.forEach(function (button, index) {
 });
 
 elCancelButton.addEventListener('click', function () {
-  // Reset the total cost to 0
-  elCostTotalElement.textContent = '0';
+  // Reset the total cost to 0 for all elements
+  elCostTotalElements.forEach(function (element) {
+    element.textContent = '0';
+  });
 
   // Reset the quantity of each product to 0
   elProductQuantityElements.forEach(function (quantityElement) {
@@ -51,6 +55,8 @@ elCancelButton.addEventListener('click', function () {
 });
 
 function updateTotalCost(amount) {
-  const currentTotal = parseInt(elCostTotalElement.textContent, 10) || 0; // Ensure it's a number
-  elCostTotalElement.textContent = currentTotal + amount + ` so'm`;
+  elCostTotalElements.forEach(function (element) {
+    const currentTotal = parseInt(element.textContent, 10) || 0; // Ensure it's a number
+    element.textContent = (currentTotal + amount) + ' so\'m';
+  });
 }

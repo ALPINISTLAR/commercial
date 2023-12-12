@@ -74,8 +74,11 @@ select:-webkit-autofill:focus {
 /* ** MAIN CONTENT ** */
 .main-content
 {
-  padding-top: 30px;
+  padding-top: 50px;
   flex-grow: 1;
+}
+#top{
+  margin-bottom: 50px;
 }
 .products {
   display: flex;
@@ -99,8 +102,6 @@ select:-webkit-autofill:focus {
   border-radius: 5px;
   background: #F6F8FD;
 }
-
-
 .products__card {
   display: flex;
   flex-direction: column;
@@ -118,8 +119,8 @@ select:-webkit-autofill:focus {
   object-fit: contain;
 }
 .products__card p{
-font-weight: 500;
-flex-grow: 1;
+  font-weight: 500;
+  flex-grow: 1;
 }
 .products__card span{
   font-weight: 600;
@@ -185,21 +186,62 @@ flex-grow: 1;
 }
 .total__btn {
   width: 160px;
-display: block;
-font-weight: 600;
-text-transform: capitalize;
-text-decoration: none;
-text-align: center;
-cursor: pointer;
-border: 2px solid transparent;
-color: #fff;
-padding: 10px 16px;
-border-radius: 5px;
-background-color: #FF7E1B;
-transition: 0.4s ease;
+  display: block;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid transparent;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 5px;
+  background-color: #FF7E1B;
+  transition: 0.4s ease;
 }
 .total__btn:hover{
   background-color: transparent;
   border-color: #FF7E1B;
   color: #FF7E1B;
+}
+
+.pay{
+  padding-bottom: 100px;
+}
+#balance{
+  font-weight: 600;
+}
+.buy__container{
+  display: flex;
+}
+.buy__container .total__cost{
+  margin-right: 0;
+}
+.credit-card__wrapper{
+  display: flex;
+  gap: 30px;
+  margin-right: 100px;
+}
+.credit-card{
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #F6F8FD;
+}
+.credit-card--selected{
+  opacity: 0.5;
+}
+.credit-card--selected .total__btn:hover{
+  background-color: #FF7E1B;
+  color: #fff;
+}
+.credit-card__type{
+  width: 180px;
+  height: 100px;
+  object-fit: cover;
+}
+#general-balance{
+  margin-left: 30px;
 }
