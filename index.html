@@ -8,9 +8,9 @@
   <!-- ======================================= -->
   <!-- =====         GOOGLE FONTS         ==== -->
   <!-- ======================================= -->
-
-
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- =============================== -->
   <!-- =====       STYLES        ===== -->
   <!-- =============================== -->
@@ -21,10 +21,102 @@
 
 
 
-<!-- ************************ -->
-<!-- ***   MAIN SECTION   *** -->
-<!-- ************************ -->
-<main class="main-content"></main>
+  <!-- ************************ -->
+  <!-- ***   MAIN SECTION   *** -->
+  <!-- ************************ -->
+  <main class="main-content">
+    <div class="container">
+      <div class="products">
+        <!-- * card 1 * -->
+        <div class="products__card">
+          <img src="img/sabzi.jpg" width="200" height="150">
+          <p>Sabzi, 1kg: <span id="cost">2000</span> so'm</p>
+
+          <div class="product-info__quantity-wrapper">
+            <!-- button [ - ] -->
+            <button class="product-info__quantity-button decrease-button" type="button" aria-label="Remove 1">-</button>
+            <div class="product-info__quantity">0</div>
+            <!-- button [ + ] -->
+            <button class="product-info__quantity-button increase-button" type="button" aria-label="Add 1">+</button>
+          </div>
+        </div>
+
+        <!-- * card 2 * -->
+        <div class="products__card">
+          <img src="img/kartoshka.jpg" width="200" height="150">
+          <p>Kartoshka, 1kg: <span id="cost">4500</span> so'm</p>
+
+          <div class="product-info__quantity-wrapper">
+            <!-- button [ - ] -->
+            <button class="product-info__quantity-button decrease-button" type="button" aria-label="Remove 1">-</button>
+            <div class="product-info__quantity">0</div>
+            <!-- button [ + ] -->
+            <button class="product-info__quantity-button increase-button" type="button" aria-label="Add 1">+</button>
+          </div>
+        </div>
+
+        <!-- * card 3 * -->
+        <div class="products__card">
+          <img src="img/piyoz.jpg" width="200" height="150">
+          <p>Piyoz, 1kg: <span id="cost">3700</span> so'm</p>
+
+          <div class="product-info__quantity-wrapper">
+            <!-- button [ - ] -->
+            <button class="product-info__quantity-button decrease-button" type="button" aria-label="Remove 1">-</button>
+            <div class="product-info__quantity">0</div>
+            <!-- button [ + ] -->
+            <button class="product-info__quantity-button increase-button" type="button" aria-label="Add 1">+</button>
+          </div>
+        </div>
+
+                <!-- * card 4 * -->
+                <div class="products__card">
+                  <img src="img/karam.jpg" width="200" height="150">
+                  <p>Karam, 1 dona: <span id="cost">5000</span> so'm</p>
+
+                  <div class="product-info__quantity-wrapper">
+                    <!-- button [ - ] -->
+                    <button class="product-info__quantity-button decrease-button" type="button" aria-label="Remove 1">-</button>
+                    <div class="product-info__quantity">0</div>
+                    <!-- button [ + ] -->
+                    <button class="product-info__quantity-button increase-button" type="button" aria-label="Add 1">+</button>
+                  </div>
+                </div>
+
+                        <!-- * card 5 * -->
+        <div class="products__card">
+          <img src="img/tovuq.jpg" width="200" height="150">
+          <p>Tovuq, 1kg: <span id="cost">36000</span> so'm</p>
+
+          <div class="product-info__quantity-wrapper">
+            <!-- button [ - ] -->
+            <button class="product-info__quantity-button decrease-button" type="button" aria-label="Remove 1">-</button>
+            <div class="product-info__quantity">0</div>
+            <!-- button [ + ] -->
+            <button class="product-info__quantity-button increase-button" type="button" aria-label="Add 1">+</button>
+          </div>
+        </div>
+
+                <!-- * card 3 * -->
+                <div class="products__card">
+                  <img src="img/tuhum.jpg" width="200" height="150">
+                  <p>Tuhum, 1 dona: <span id="cost">1800</span> so'm</p>
+
+                  <div class="product-info__quantity-wrapper">
+                    <!-- button [ - ] -->
+                    <button class="product-info__quantity-button decrease-button" type="button" aria-label="Remove 1">-</button>
+                    <div class="product-info__quantity">0</div>
+                    <!-- button [ + ] -->
+                    <button class="product-info__quantity-button increase-button" type="button" aria-label="Add 1">+</button>
+                  </div>
+                </div>
+      </div>
+
+      <div class="total">
+        <p class="total__cost" id="cost-total"></p>
+      </div>
+    </div>
+  </main>
 
   <script src="js/main.js"></script>
 </body>
