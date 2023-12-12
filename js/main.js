@@ -87,5 +87,21 @@ elSelectButtons.forEach(function (elSelectButton) {
     const generalBalance = document.getElementById('general-balance');
     let balanceClosest = closestBalance.textContent + ` so'm`;
     generalBalance.textContent = balanceClosest;
+
+    document.getElementById('general-balance-paying').textContent = balanceClosest;
   });
 });
+
+const closeButtons = document.querySelectorAll('.close--btn');
+
+closeButtons.forEach(function (closeButton) {
+  closeButton.addEventListener('click', function () {
+    closeButton.parentElement.style.display = 'none';
+  });
+});
+
+
+
+function ret() {
+  document.getElementById('paid').textContent = document.getElementById('cost-total').textContent;
+}
